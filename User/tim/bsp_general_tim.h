@@ -4,7 +4,7 @@
 #include "stm32f4xx.h"
 
 #define G_OCPWM_PIN01            		GPIO_Pin_0|GPIO_Pin_1|GPIO_Pin_2|GPIO_Pin_3
-#define G_OCPWM_PIN02            		GPIO_Pin_9|GPIO_Pin_10|GPIO_Pin_11|GPIO_Pin_12
+#define G_OCPWM_PIN02            		GPIO_Pin_0|GPIO_Pin_10|GPIO_Pin_11|GPIO_Pin_12
 
 #define G_OCPWM_GPIO_PORT01       	GPIOA                      
 #define G_OCPWM_GPIO_CLK01        	RCC_AHB1Periph_GPIOA
@@ -12,11 +12,14 @@
 #define G_OCPWM_GPIO_PORT02       	GPIOH                      
 #define G_OCPWM_GPIO_CLK02        	RCC_AHB1Periph_GPIOH
 
+#define G_OCPWM_GPIO_PORT03       	GPIOI                     
+#define G_OCPWM_GPIO_CLK03        	RCC_AHB1Periph_GPIOI
+
 #define G_OCPWM_PS00				GPIO_PinSource0
 #define G_OCPWM_PS01				GPIO_PinSource1
 #define G_OCPWM_PS02				GPIO_PinSource2
 #define G_OCPWM_PS03				GPIO_PinSource3
-#define G_OCPWM_PS09				GPIO_PinSource9
+#define G_OCPWM_PS09				GPIO_PinSource0
 #define G_OCPWM_PS10				GPIO_PinSource10
 #define G_OCPWM_PS11				GPIO_PinSource11
 #define G_OCPWM_PS12				GPIO_PinSource12

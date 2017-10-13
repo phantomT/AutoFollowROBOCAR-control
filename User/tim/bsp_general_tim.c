@@ -46,9 +46,10 @@ static void TIMx_GPIO_Config_B(void)
 
 	/*开启相关的GPIO外设时钟*/
 	RCC_AHB1PeriphClockCmd (G_OCPWM_GPIO_CLK02, ENABLE);
+	RCC_AHB1PeriphClockCmd (G_OCPWM_GPIO_CLK03, ENABLE);
 	
 	/* 定时器通道引脚复用 */
-	GPIO_PinAFConfig(G_OCPWM_GPIO_PORT02,G_OCPWM_PS09,G_OCPWM_AF02);
+	GPIO_PinAFConfig(G_OCPWM_GPIO_PORT03,G_OCPWM_PS09,G_OCPWM_AF02);
 	GPIO_PinAFConfig(G_OCPWM_GPIO_PORT02,G_OCPWM_PS10,G_OCPWM_AF02);
 	GPIO_PinAFConfig(G_OCPWM_GPIO_PORT02,G_OCPWM_PS11,G_OCPWM_AF02);
 	GPIO_PinAFConfig(G_OCPWM_GPIO_PORT02,G_OCPWM_PS12,G_OCPWM_AF02);
@@ -62,6 +63,7 @@ static void TIMx_GPIO_Config_B(void)
 	GPIO_InitStructure.GPIO_Speed = GPIO_Speed_100MHz; 
 	
 	GPIO_Init(G_OCPWM_GPIO_PORT02, &GPIO_InitStructure);
+	GPIO_Init(G_OCPWM_GPIO_PORT03, &GPIO_InitStructure);
 }
 
 /*
@@ -184,7 +186,7 @@ static void TIM_PWMOUTPUT_Config02(int CCR0,int CCR1,int CCR2,int CCR3)
 	TIM_OC4Init(G_TIM02, &TIM_OCInitStructure);	 //使能通道4
   
 	/*使能通道重载*/
-	TIM_OC1PreloadConfig(G_TIM02, TIM_OCPreload_Enable);
+	TIM_OC4PreloadConfig(G_TIM02, TIM_OCPreload_Enable);
 	// 使能定时器
 	TIM_Cmd(G_TIM02, ENABLE);	
 }

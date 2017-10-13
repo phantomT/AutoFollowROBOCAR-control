@@ -16,28 +16,28 @@
   * @param  ÎŞ
   * @retval ÎŞ
   */
-static void NVIC_Configuration(void)
-{
-  NVIC_InitTypeDef NVIC_InitStructure;
+//static void NVIC_Configuration(void)
+//{
+  //NVIC_InitTypeDef NVIC_InitStructure;
   
   /* Ç¶Ì×ÏòÁ¿ÖĞ¶Ï¿ØÖÆÆ÷×éÑ¡Ôñ */
-  NVIC_PriorityGroupConfig(NVIC_PriorityGroup_2);
+  //NVIC_PriorityGroupConfig(NVIC_PriorityGroup_2);
   
   /* ÅäÖÃUSARTÎªÖĞ¶ÏÔ´ */
-  NVIC_InitStructure.NVIC_IRQChannel = DEBUG_USART_IRQ;
+  //NVIC_InitStructure.NVIC_IRQChannel = DEBUG_USART_IRQ;
   /* ÇÀ¶ÏÓÅÏÈ¼¶Îª1 */
-  NVIC_InitStructure.NVIC_IRQChannelPreemptionPriority = 1;
+  //NVIC_InitStructure.NVIC_IRQChannelPreemptionPriority = 1;
   /* ×ÓÓÅÏÈ¼¶Îª1 */
-  NVIC_InitStructure.NVIC_IRQChannelSubPriority = 1;
+  //NVIC_InitStructure.NVIC_IRQChannelSubPriority = 1;
   /* Ê¹ÄÜÖĞ¶Ï */
-  NVIC_InitStructure.NVIC_IRQChannelCmd = ENABLE;
+  //NVIC_InitStructure.NVIC_IRQChannelCmd = ENABLE;
   /* ³õÊ¼»¯ÅäÖÃNVIC */
-  NVIC_Init(&NVIC_InitStructure);
-}
+  //NVIC_Init(&NVIC_InitStructure);	
+//}
 
 
  /**
-  * @brief  DEBUG_USART GPIO ÅäÖÃ,¹¤×÷Ä£Ê½ÅäÖÃ¡£115200 8-N-1 £¬ÖĞ¶Ï½ÓÊÕÄ£Ê½
+  * @brief  DEBUG_USART GPIO ÅäÖÃ,¹¤×÷Ä£Ê½ÅäÖÃ¡  8-N-1 £¬ÖĞ¶Ï½ÓÊÕÄ£Ê½
   * @param  ÎŞ
   * @retval ÎŞ
   */
@@ -89,7 +89,7 @@ void Debug_USART_Config(void)
   USART_Init(DEBUG_USART, &USART_InitStructure); 
 	
   /* Ç¶Ì×ÏòÁ¿ÖĞ¶Ï¿ØÖÆÆ÷NVICÅäÖÃ */
-	NVIC_Configuration();
+	//NVIC_Configuration();
   
 	/* Ê¹ÄÜ´®¿Ú½ÓÊÕÖĞ¶Ï */
 	USART_ITConfig(DEBUG_USART, USART_IT_RXNE, ENABLE);

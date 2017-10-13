@@ -148,12 +148,13 @@ void SysTick_Handler(void)
 
 void DEBUG_USART_IRQHandler(void)
 {
-  uint8_t ucTemp;
+  /*uint8_t ucTemp;
 	if(USART_GetITStatus(DEBUG_USART,USART_IT_RXNE)!=RESET)
 	{		
 		ucTemp = USART_ReceiveData( DEBUG_USART );
-    USART_SendData(DEBUG_USART,ucTemp);    
-	}	 
+    USART_SendData(DEBUG_USART,ucTemp);  
+		
+	}	 */
 }		
 	
 /**
